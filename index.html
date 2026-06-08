@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 Арнайы шақырту</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 1 -->
+<div class="page active" id="p1">
+    <h1>💌 Сәлем!</h1>
+    <p>Саған арнайы құпия хат бар...</p>
+    <button onclick="nextPage(2)">Ашу</button>
+</div>
+
+<!-- 2 -->
+<div class="page" id="p2">
+    <h1>🔍 Тексеру</h1>
+    <p>
+        Әдемілік: 100%<br>
+        Күлімсіреу: 100%<br>
+        Ерекшелік: 100%
+    </p>
+    <button onclick="nextPage(3)">Жалғастыру</button>
+</div>
+
+<!-- 3 -->
+<div class="page" id="p3">
+    <h1>❤️</h1>
+    <p>
+        Сен мен үшін ерекше адамсың...<br><br>
+        Сондықтан саған ұсыныс бар 😊
+    </p>
+    <button onclick="nextPage(4)">Ұсынысты көру</button>
+</div>
+
+<!-- 4 -->
+<div class="page" id="p4">
+    <h1>🌹</h1>
+    <p>Сен менімен кездесуге шығуға келісесің бе?</p>
+
+    <button id="yesBtn">ИӘ ❤️</button>
+    <button id="noBtn">ЖОҚ 😅</button>
+</div>
+
+<!-- 5 -->
+<div class="page" id="p5">
+    <h1>🎉❤️</h1>
+    <p>
+        Рақмет ❤️<br>
+        Керемет жауап 😊
+    </p>
+
+    <button onclick="playMusic()">🎵 Музыка</button>
+</div>
+
+<audio id="music"
+src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a0f9a2.mp3">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
