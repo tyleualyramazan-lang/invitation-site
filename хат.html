@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Letter 💌</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+height:100vh;
+overflow:hidden;
+
+font-family:Arial, sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#fff1f7,
+#ffd6e5
+);
+
+color:#5a3045;
+
+}
+
+
+
+.page{
+
+display:none;
+
+height:100vh;
+width:100%;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+
+.active{
+
+display:flex;
+
+}
+
+
+
+h1{
+
+font-size:30px;
+
+}
+
+
+
+p{
+
+font-size:20px;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+/* ХАТ */
+
+
+.envelope{
+
+width:230px;
+height:160px;
+
+background:#ff9fbb;
+
+border-radius:15px;
+
+position:relative;
+
+cursor:pointer;
+
+box-shadow:
+0 15px 30px #d88;
+
+animation:
+float 2s infinite;
+
+}
+
+
+
+.envelope:before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+
+border-left:115px solid transparent;
+border-right:115px solid transparent;
+
+border-top:85px solid #ffbfd2;
+
+}
+
+
+
+@keyframes float{
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+/* ашылу */
+
+.open{
+
+animation:
+
+open 1s forwards;
+
+}
+
+
+@keyframes open{
+
+
+100%{
+
+transform:
+rotateX(180deg)
+scale(1.2);
+
+
+}
+
+
+}
+
+
+
+
+button{
+
+
+border:none;
+
+background:#ff5790;
+
+color:white;
+
+font-size:19px;
+
+padding:16px 35px;
+
+border-radius:40px;
+
+margin:12px;
+
+cursor:pointer;
+
+box-shadow:
+0 8px 20px #ffb0c8;
+
+
+}
+
+
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+
+
+
+
+.flower{
+
+font-size:90px;
+
+animation:
+flower 2s infinite;
+
+}
+
+
+
+@keyframes flower{
+
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+
+
+
+/* жүрек */
+
+
+.effect{
+
+
+position:absolute;
+
+font-size:35px;
+
+animation:
+
+drop 3s linear forwards;
+
+
+}
+
+
+@keyframes drop{
+
+
+0%{
+
+top:-50px;
+
+}
+
+
+100%{
+
+top:100vh;
+
+}
+
+
+}
+
+
+
+/* отшашу */
+
+
+.fire{
+
+
+position:absolute;
+
+font-size:50px;
+
+animation:
+boom 2s;
+
+
+}
+
+
+@keyframes boom{
+
+
+from{
+
+transform:scale(0);
+
+}
+
+
+to{
+
+transform:scale(2);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- 1 БЕТ -->
+
+<div class="page active" id="first">
+
+
+<h1>
+💌 Саған хат бар
+</h1>
+
+
+<div class="envelope">
+
+</div>
+
+
+<p>
+Саған кішкентай хат келді 💌
+</p>
+
+
+<button onclick="openLetter()">
+
+❤️
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- 2 БЕТ -->
+
+
+<div class="page" id="letter">
+
+
+<h1>
+💌
+</h1>
+
+
+
+<p>
+
+Саған кішкентай ғана<br>
+
+көңіл күй сыйлайтын<br>
+
+сөздер айтқым келді...
+
+</p>
+
+
+
+<p>
+
+
+✨ Әдемілік — өте керемет
+
+
+<br><br>
+
+
+🌿 Табиғилық — өте керемет
+
+
+<br><br>
+
+
+😊 Сенің көңіл күйің — өте керемет
+
+
+</p>
+
+
+
+<div class="flower">
+
+🌹
+
+</div>
+
+
+
+<button onclick="next()">
+
+Келесі ➜
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- 3 БЕТ -->
+
+
+<div class="page" id="question">
+
+
+<h1>
+
+❤️ Бір сұрағым бар...
+
+</h1>
+
+
+<p>
+
+Менімен кездесуге келесіз бе?
+
+</p>
+
+
+
+<button onclick="yes()">
+
+❤️ Иә
+
+</button>
+
+
+
+<button id="noBtn" onclick="no()">
+
+🙂 Жоқ
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- 4 БЕТ -->
+
+
+<div class="page" id="finish">
+
+
+<h1>
+
+🎉 Өте керемет!
+
+</h1>
+
+
+<p>
+
+Қалған сұрақтарды<br>
+
+WhatsApp-та талқылайық 😊
+
+</p>
+
+
+
+<div class="flower">
+
+💐
+
+</div>
+
+
+
+<button onclick="whatsapp()">
+
+💬 WhatsApp ашу
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+
+
+function openLetter(){
+
+
+document.getElementById("first")
+.classList.remove("active");
+
+
+document.getElementById("letter")
+.classList.add("active");
+
+
+}
+
+
+
+
+function next(){
+
+document.getElementById("letter")
+.classList.remove("active");
+
+
+document.getElementById("question")
+.classList.add("active");
+
+}
+
+
+
+
+
+
+function yes(){
+
+document.getElementById("question")
+.classList.remove("active");
+
+
+document.getElementById("finish")
+.classList.add("active");
+
+
+celebrate();
+
+}
+
+
+
+
+
+
+function no(){
+
+
+document
+.getElementById("noBtn")
+.style.transform =
+"translate(100px, -50px)";
+
+
+alert(
+"Бұл жауап әзірге қарастырылмаған 🙂"
+);
+
+
+}
+
+
+
+
+
+
+
+function celebrate(){
+
+
+
+for(let i=0;i<60;i++){
+
+
+let e=document.createElement("div");
+
+
+e.className="effect";
+
+
+e.innerHTML=
+["❤️","🌸","💐","🎆"][
+
+Math.floor(
+Math.random()*4
+
+)
+
+];
+
+
+
+e.style.left=
+Math.random()*100+"%";
+
+
+
+e.style.animationDuration=
+(1+Math.random()*3)+"s";
+
+
+
+document.body.appendChild(e);
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+function whatsapp(){
+
+
+
+let phone =
+"77077015903";
+
+
+
+let text =
+"Сәлем 😊 Кездесу туралы сөйлесейік ❤️";
+
+
+
+let link =
+"https://wa.me/"
++phone+
+"?text="
++encodeURIComponent(text);
+
+
+
+window.location.href=link;
+
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
